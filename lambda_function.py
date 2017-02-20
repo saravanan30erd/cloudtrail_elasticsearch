@@ -23,4 +23,4 @@ def lambda_handler(event, context):
                 newline = 1
                 cloudtrail_event = cloudtrail_event + "\"%s\":\"%s\"" % (field, item[field])
             cloudtrail_event = cloudtrail_event + "}"
-            es.index(index="cloudtrail",doc_type='cloudtrail_event', body=json.loads(cloudtrail_event))
+            es.index(index="cloudtrail",doc_type="cloudtrail_event", body=json.loads(cloudtrail_event))
